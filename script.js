@@ -59,37 +59,46 @@ window.addEventListener('load', () => {
   const instructions = "Here the boring test made awsome! just for you ";
   const introduction = "Hi! What is your name?"
   const mainDiv = document.querySelector('#root');
-  const welcomeMessageElement = document.createElement('p');
-  const typingSpeed = 100;
+ 
+  const typingSpeed = 10;
   const startButton = document.querySelector('#startButton-1');
 
-  startButton.addEventListener('click', event => {
+  startButton.addEventListener('click', async event => {
     startButton.style.display = "none";
-    displayMessage(instructions, 'text', typingSpeed);
-   // displayMessage(instructions, 'text');
-    
+    await startQuiz();
   })
 
-  const displayMessage = (message, className, speed) => {
+  const displayMessage = async (message, className = "text", speed = typingSpeed) => {
     // This func takes two arguments a message and a className to add and create a new elemnt inside the root div
+    const welcomeMessageElement = document.createElement('p');
     welcomeMessageElement.classList.add(className);
     mainDiv.appendChild(welcomeMessageElement);
-    typeText(message, speed);
-    displayInputandSubmit();
+    await typeText(welcomeMessageElement, message, speed);
   }
 
+  
+
   const displayInputandSubmit = () => {
-    //This func enables a input field
+    // This func creates a input and submit field
     const inputField = document.createElement("input");
     inputField.setAttribute("type", "text");
     inputField.classList.add("userInput");
-    inputField.setAttribute("id", "")
     mainDiv.appendChild(inputField);
     const submitButton = document.createElement("button");
     submitButton.type = "submit";
     submitButton.innerHTML = 	"&#8594;";
     submitButton.classList.add("submitButton");
     mainDiv.appendChild(submitButton);
+  }
+
+
+  const startQuiz = async () => {
+    
+    for (let i = 0; i < topicBriefing.length; i++){
+      for (let j = 0; j < topicBriefing[i].topic.length; j++){
+        await displayMessage(topicBriefing[i].topic[j], 'text', typingSpeed);
+      }
+    }
   }
 
   const clearDisplay = () => {
@@ -100,25 +109,30 @@ window.addEventListener('load', () => {
 
   const enableButton = (button) => {
     //This func takes a button element and enable
-    if(button.style.display = "block"){
+    if(button.style.display === "block"){
       button.style.display = "none";
+      console.log(button.style.display = "block");
     }
     else{
       button.style.display = "block"
+      console.log("Functioning");
     }
     
   }
 
-  const typeText = (text, speed) => {
-    // This func takes two arguments Text and Speed respectively, and assigns text to element char by char (creating a typing effect)
-    let i = 0;
-    const typing = setInterval(() => {
-      welcomeMessageElement.textContent += text.charAt(i);
-      i++;
-      if (i > text.length) {
-        clearInterval(typing);
-      }
-    }, speed);
+  const typeText = async (pElement, text, speed) => {
+    return new Promise(resolve => {
+      let i = 0;
+      const typing = setInterval(() => {
+        pElement.textContent += text.charAt(i);
+        i++;
+        if (i > text.length) {
+          clearInterval(typing);
+          resolve();
+        }
+      }, speed);
+    });
   };
+  
 
 })

@@ -5,9 +5,10 @@
     border-color: rgba(22, 233, 106, 0.582);
     border-radius: 2px;
     border-style: solid;
-    height: 50vh;
+    height: fit-content;
     width: 60vw;
     box-shadow: -2px -2px 48px 2px rgba(70, 89, 65, 0.9);
+    padding: 10px;
 }
 body{
     background-color: black;

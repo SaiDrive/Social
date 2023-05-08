@@ -1,3 +1,4 @@
+
 window.addEventListener('load', () => {
   const questions = [
     {
@@ -76,30 +77,48 @@ window.addEventListener('load', () => {
     await typeText(welcomeMessageElement, message, speed);
   }
 
-  
-
-  const displayInputandSubmit = () => {
+  const displayInputandSubmit = async () => {
     // This func creates a input and submit field
     const inputField = document.createElement("input");
     inputField.setAttribute("type", "text");
+    inputField.setAttribute("id", "input-1");
     inputField.classList.add("userInput");
     mainDiv.appendChild(inputField);
     const submitButton = document.createElement("button");
     submitButton.type = "submit";
+    submitButton.setAttribute("id", "submit-1");
     submitButton.innerHTML = 	"&#8594;";
     submitButton.classList.add("submitButton");
     mainDiv.appendChild(submitButton);
   }
 
+  const validateInput = async () => {
+    return new Promise((resolve, reject) => {
+      const submitButton = document.querySelector('#submit-1');
+      submitButton.addEventListener('click', () => {
+        const inputValue = document.querySelector('#input-1').value;
+        console.log(inputValue);
+        resolve(inputValue);
+        submitButton.removeEventListener('click', onClick);
+      })
+    });
+  }
 
-  const startQuiz = async () => {
-    
+  const displayTopics = async () => {
     for (let i = 0; i < topicBriefing.length; i++){
       for (let j = 0; j < topicBriefing[i].topic.length; j++){
         await displayMessage(topicBriefing[i].topic[j], 'text', typingSpeed);
-      }
+        await displayInputandSubmit();
+        await validateInput();
+      } 
+      
     }
   }
+  const startQuiz =  async () => {
+        await displayTopics();
+        //await displayQuestion();
+        
+      }
 
   const clearDisplay = () => {
     // This func clears all the "p elements" by looping and reeseting the p nodes in the entire DOM 

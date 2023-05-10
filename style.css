@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Play:wght@400;700&family=Roboto&family=Sono:wght@200;300;500;600;700&display=swap');
+
 .mainDiv{
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
-    border-color: rgba(22, 233, 106, 0.582);
+    border-color: rgba(0, 0, 0, 0.582);
     border-radius: 2px;
     border-style: solid;
     height: fit-content;
-    width: 60vw;
-    box-shadow: -2px -2px 48px 2px rgba(70, 89, 65, 0.9);
+    width: 90vw;
+    box-shadow: -2px -2px 48px 2px rgba(102, 102, 102, 0.461);
     padding: 10px;
 }
 body{
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.612);
 }
 .startButton{
     background-color: rgba(0, 0, 0, 0.582);
@@ -24,23 +26,31 @@ body{
 
 .text{  
     text-align: left;
-    background-color: rgba(0, 0, 0, 0.582);
-    color: rgba(22, 233, 106, 0.582);
-    border-color: rgba(22, 233, 106, 0.582);
+    color: rgba(0, 0, 0, 0.925);
+    border-color: rgba(22, 233, 106, 0.582);7
     border-radius: 2px; 
     padding: 10px;
+    font-family: 'Sono', sans-serif;
+    text-shadow: 0px 0px 2px #0000007d;
+}
+.inputSubmitDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 1rem;
 }
 
 .userInput{
     text-align: center;
     color: rgba(22, 233, 106, 0.582);
-    margin-left: 25%;
     border-color: rgba(22, 233, 106, 0.582);
     border-radius: 5px;
     border-style: solid;
     background-color: rgba(69, 67, 67, 0.549);
     animation: blinking 1000ms infinite;
-    /*display: none;*/
+    display: none;
 }
 .submitButton{
    margin-left: 1rem;
@@ -48,7 +58,7 @@ body{
    background-color: rgba(237, 234, 234, 0.866);
    width: 30px;
    transition: width 200ms;
-   /*display: none;*/
+   display: none;
 }
 .submitButton:hover {
    border-color: rgba(22, 233, 106, 0.582);

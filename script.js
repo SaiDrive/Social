@@ -59,9 +59,9 @@ window.addEventListener('load', () => {
   const welcomeMessage = "Hello Welcome, to the Test.";
   const instructions = "Here the boring test made awsome! just for you ";
   const introduction = "Hi! What is your name?"
+  const endMessage = " You're Are Awesome.. you learned it"
+  const typingSpeed = 100;
   const mainDiv = document.querySelector('#root');
- 
-  const typingSpeed = 10;
   const startButton = document.querySelector('#startButton-1');
 
   startButton.addEventListener('click', async event => {
@@ -77,29 +77,15 @@ window.addEventListener('load', () => {
     await typeText(welcomeMessageElement, message, speed);
   }
 
-  const displayInputandSubmit = async () => {
-    // This func creates a input and submit field
-    const inputField = document.createElement("input");
-    inputField.setAttribute("type", "text");
-    inputField.setAttribute("id", "input-1");
-    inputField.classList.add("userInput");
-    mainDiv.appendChild(inputField);
-    const submitButton = document.createElement("button");
-    submitButton.type = "submit";
-    submitButton.setAttribute("id", "submit-1");
-    submitButton.innerHTML = 	"&#8594;";
-    submitButton.classList.add("submitButton");
-    mainDiv.appendChild(submitButton);
-  }
-
   const validateInput = async () => {
     return new Promise((resolve, reject) => {
       const submitButton = document.querySelector('#submit-1');
       submitButton.addEventListener('click', () => {
         const inputValue = document.querySelector('#input-1').value;
-        console.log(inputValue);
         resolve(inputValue);
-        submitButton.removeEventListener('click', onClick);
+        clearDisplay();
+        disableElementDisplay("submit-1", "input-1");
+        console.log("validate");
       })
     });
   }
@@ -108,35 +94,41 @@ window.addEventListener('load', () => {
     for (let i = 0; i < topicBriefing.length; i++){
       for (let j = 0; j < topicBriefing[i].topic.length; j++){
         await displayMessage(topicBriefing[i].topic[j], 'text', typingSpeed);
-        await displayInputandSubmit();
+        await displayMessage(`(${j+1} / ${topicBriefing[i].topic.length}) ${questions[j].question}`);
+        for (let k = 0; k < questions[j].options.length; k++){
+          await displayMessage(`${k+1})  ${questions[j].options[k]}`)
+        }
+        await enableElementDisplay("submit-1", "input-1");
         await validateInput();
-      } 
-      
+      }
     }
   }
+
   const startQuiz =  async () => {
-        await displayTopics();
-        //await displayQuestion();
-        
-      }
+      await displayTopics();
+      await displayMessage(endMessage); 
+  }
 
   const clearDisplay = () => {
     // This func clears all the "p elements" by looping and reeseting the p nodes in the entire DOM 
     const pElements = document.querySelectorAll('p');
-    pElements.forEach(element => element.innerHTML = '');
+    pElements.forEach(element => mainDiv.removeChild(element));
   }
 
-  const enableButton = (button) => {
-    //This func takes a button element and enable
-    if(button.style.display === "block"){
-      button.style.display = "none";
-      console.log(button.style.display = "block");
-    }
-    else{
-      button.style.display = "block"
-      console.log("Functioning");
-    }
-    
+  const enableElementDisplay = async (id1, id2) => {
+    //This func takes a Id of an element as arguments and toggle between its display none and block.
+    const element1 = document.querySelector(`#${id1}`);
+    const element2 = document.querySelector(`#${id2}`);
+    element1.style.display = 'block';
+    element2.style.display = 'block';
+  }
+
+  const disableElementDisplay = async (id1, id2) => {
+    //This func takes a Id of an element as arguments and toggle between its display none and block.
+    const element1 = document.querySelector(`#${id1}`);
+    const element2 = document.querySelector(`#${id2}`);
+    element1.style.display = 'none';
+    element2.style.display = 'none';
   }
 
   const typeText = async (pElement, text, speed) => {

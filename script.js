@@ -43,6 +43,8 @@ window.addEventListener('load', () => {
     }
   ]
 
+  
+
   const topicBriefing = [
     {
       topic: [
@@ -60,7 +62,8 @@ window.addEventListener('load', () => {
   const instructions = "Here the boring test made awsome! just for you ";
   const introduction = "Hi! What is your name?"
   const endMessage = " You're Are Awesome.. you learned it"
-  const typingSpeed = 100;
+  const errorMessage = "You're smart enough to answer, try again"
+  const typingSpeed = 1;
   const mainDiv = document.querySelector('#root');
   const startButton = document.querySelector('#startButton-1');
 
@@ -75,17 +78,22 @@ window.addEventListener('load', () => {
     welcomeMessageElement.classList.add(className);
     mainDiv.appendChild(welcomeMessageElement);
     await typeText(welcomeMessageElement, message, speed);
-  }
+  } 
 
-  const validateInput = async () => {
+  const validateInput = async (key) => {
     return new Promise((resolve, reject) => {
       const submitButton = document.querySelector('#submit-1');
       submitButton.addEventListener('click', () => {
         const inputValue = document.querySelector('#input-1').value;
-        resolve(inputValue);
-        clearDisplay();
-        disableElementDisplay("submit-1", "input-1");
-        console.log("validate");
+        if (key === inputValue){
+          resolve();
+          clearDisplay();
+          disableElementDisplay("submit-1", "input-1");
+        }
+        else {
+          inputValue = "Incorrect Answer, try again"
+        }
+        
       })
     });
   }
@@ -99,7 +107,7 @@ window.addEventListener('load', () => {
           await displayMessage(`${k+1})  ${questions[j].options[k]}`)
         }
         await enableElementDisplay("submit-1", "input-1");
-        await validateInput();
+        await validateInput(questions[j].answer);
       }
     }
   }

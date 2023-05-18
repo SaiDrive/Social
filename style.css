@@ -33,6 +33,16 @@ body{
     font-family: 'Sono', sans-serif;
     text-shadow: 0px 0px 2px #0000007d;
 }
+.topicText{
+    text-align: left;
+    color: rgba(29, 45, 221, 0.925);
+    border-color: rgba(22, 233, 106, 0.582);
+    border-radius: 2px; 
+    padding: 10px;
+    font-family: 'Sono', sans-serif;
+    text-shadow: 0px 0px 2px #0000007d;
+}
+
 .textError{
     text-align: center;
     color: rgba(57, 131, 210, 0.925);

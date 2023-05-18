@@ -1,4 +1,5 @@
 
+
 window.addEventListener('load', () => {
   const questions = [
     {
@@ -80,34 +81,44 @@ window.addEventListener('load', () => {
     await typeText(welcomeMessageElement, message, speed);
   } 
 
-  const validateInput = async (key) => {
+
+  const validateInput = async () => {
     return new Promise((resolve, reject) => {
       const submitButton = document.querySelector('#submit-1');
       submitButton.addEventListener('click', () => {
-        const inputValue = document.querySelector('#input-1').value;
-        if (key === inputValue){
-          resolve();
-          clearDisplay();
+        const inputField = document.querySelector('#input-1')
+        let inputAnswer = inputField.value;
+       if (inputAnswer !== " "){
+          console.log("Functioning");
+          console.log(typeof inputAnswer);
+          console.log("Functioning");
+          clearDisplay(inputAnswer);
           disableElementDisplay("submit-1", "input-1");
+          disableElementDisplay("invalidAnswer");
+          resolve(inputAnswer);
+        } 
+        else{
+         enableElementDisplay('invalidAnswer');
+          console.log("tryAgain")
         }
-        else {
-          inputValue = "Incorrect Answer, try again"
-        }
-        
+          
       })
     });
-  }
+  } 
+
+
 
   const displayTopics = async () => {
     for (let i = 0; i < topicBriefing.length; i++){
       for (let j = 0; j < topicBriefing[i].topic.length; j++){
-        await displayMessage(topicBriefing[i].topic[j], 'text', typingSpeed);
+        await displayMessage(topicBriefing[i].topic[j], 'topicText', typingSpeed);
         await displayMessage(`(${j+1} / ${topicBriefing[i].topic.length}) ${questions[j].question}`);
         for (let k = 0; k < questions[j].options.length; k++){
           await displayMessage(`${k+1})  ${questions[j].options[k]}`)
         }
         await enableElementDisplay("submit-1", "input-1");
-        await validateInput(questions[j].answer);
+        await validateInput();
+        disableElementDisplay("invalidAnswer");
       }
     }
   }
@@ -121,9 +132,10 @@ window.addEventListener('load', () => {
     // This func clears all the "p elements" by looping and reeseting the p nodes in the entire DOM 
     const pElements = document.querySelectorAll('p');
     pElements.forEach(element => mainDiv.removeChild(element));
+    console.log("Functioning")
   }
 
-  const enableElementDisplay = async (id1, id2) => {
+  const enableElementDisplay = async (id1, id2 = "null") => {
     //This func takes a Id of an element as arguments and toggle between its display none and block.
     const element1 = document.querySelector(`#${id1}`);
     const element2 = document.querySelector(`#${id2}`);
@@ -131,7 +143,7 @@ window.addEventListener('load', () => {
     element2.style.display = 'block';
   }
 
-  const disableElementDisplay = async (id1, id2) => {
+  const disableElementDisplay = async (id1, id2 =  "null") => {
     //This func takes a Id of an element as arguments and toggle between its display none and block.
     const element1 = document.querySelector(`#${id1}`);
     const element2 = document.querySelector(`#${id2}`);

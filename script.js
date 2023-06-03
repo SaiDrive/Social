@@ -66,9 +66,6 @@ window.addEventListener('load', () => {
     "Play the music below before clicking start (Optional)"
   ]
 
-
- 
-  
   const endMessage = " You're Are Awesome";
   const typingSpeed = 1;
   const mainDiv = document.querySelector('#root');
@@ -80,6 +77,34 @@ window.addEventListener('load', () => {
     await startQuiz();
   })
 
+  const submitButton = document.querySelector('#submit-1');
+  submitButton.addEventListener('click', async () => {
+    await startAndValidateQuiz();
+  });
+
+  const startAndValidateQuiz = async () => {
+    // This function check user input and updated key value and allows to continue the quiz only if the answer is correct, also calculate the number of submit clicks count
+    const inputField = document.querySelector('#input-1');
+        userInput = inputField.value;
+        attemptCounter += 1;
+        if (userInput === answerKey){
+            disableElementDisplay("invalidAnswer");
+            clearDisplay();
+            topicNum =  topicNum + 1;
+            if (topicNum < questions.length){
+                await continueQuiz(topicNum);
+            }
+            else {
+              disableElementDisplay("input-1", "submit-1");
+              await displayMessage(`${endMessage}, you have taken "${attemptCounter - questions.length}" more attempts to finish it`);
+              await displayMessage('Designed and developed by "Digician" with Love..');
+            }
+        }
+        else {
+          enableElementDisplay("invalidAnswer");
+        }
+  }
+
   const displayMessage = async (message, className = "text", speed = typingSpeed) => {
     // This func takes two arguments a message and a className to add and create a new elemnt inside the root div
     const welcomeMessageElement = document.createElement('p');
@@ -88,68 +113,50 @@ window.addEventListener('load', () => {
     await typeText(welcomeMessageElement, message, speed);
   } 
 
-  const submitButton = document.querySelector('#submit-1');
-  submitButton.addEventListener('click', async () => {
-        const inputField = document.querySelector('#input-1');
-        userInput = inputField.value;
-        attemptCounter += 1;
-        if (userInput === answerKey){
-          disableElementDisplay("invalidAnswer");
-          clearDisplay();
-          topicNum =  topicNum + 1;
-          if (topicNum < questions.length){
-            await continueQuiz(topicNum);
-          }
-          else{
-            disableElementDisplay("input-1", "submit-1");
-            await displayMessage(`${endMessage}, you have taken "${attemptCounter - questions.length}" more attempts to finish it`);
-            await displayMessage('Designed and developed by "Digician" with Love..');
-          }
-        }
-        else{
-          enableElementDisplay("invalidAnswer");
-        }
-      });
-
-
   const introFunc = async () =>{
+    // This function prints Welcome and Instruction messages and enables start and audio player display
     await displayArrayText(welcomeMessage);
     await displayArrayText(intructions);
     enableElementDisplay("audio-1", "startButton-1");
   }   
   
   const displayArrayText = async (textArray) =>{
-   for (let i = 0; i < textArray.length; i++){
-    await displayMessage(textArray[i], "text", 10);
+    // This function takes an array element and prints the elements by looping and passing every element in it to displayMessage function
+    for (let i = 0; i < textArray.length; i++){
+      await displayMessage(textArray[i], "text", 10);
    }
   }
 
   const continueQuiz = async (topicNum) => {
+    //This function takes a topic number and pass the value to start quiz function to contiue the quiz with respective topic number
     await disableElementDisplay("input-1", "submit-1");
     await startQuiz(topicNum);
   }
 
   const displayTopic = async (topicNum) => {
+    // This function takes topic array index and display the topic with respective index value also, adds a CSS class to it and speed of the topic
    await displayMessage(topicBriefing[0].topic[topicNum], "topicText", 125);
   }
 
   const displayQuestion = async (questNum) => {
+    // This function takes questions array index and display the question with respective index value also, adds a CSS class to it 
     await displayMessage(`(${questNum+1} / ${questions.length}) ${questions[questNum].question}`, "questionText");
   }
 
   const displayOptions = async (optionsNum) => {
+    // This function takes options array index and display options with its respective index number
     for (let i = 0; i < questions[optionsNum].options.length; i++){
       await displayMessage(`${i+1}) ${questions[optionsNum].options[i]}`);
     }
   }
 
-
-
   const getTheKey = async (questNum) => {
+    //This function get the value of answer in given questions array and assigns its value to answerKey
     answerKey = questions[questNum].answer;
   }
 
   const startQuiz =  async (topicNum = 0) => {
+    // This function takes topicNumber as an argument and displays the topic, question, and options synchronously, also update the "key" Value
       clearDisplay();
       await displayTopic(topicNum);
       await displayQuestion(topicNum);
@@ -197,6 +204,10 @@ window.addEventListener('load', () => {
     });
   };
 
+const main = () =>{
   introFunc();
+}
+
+main();
   
 })

@@ -2,58 +2,59 @@
 window.addEventListener('load', () => {
   const questions = [
     {
-    question: 'What is inflation?',
-    options: ["A situation where prices of things keep going up over time.",
-    "A situation where prices of things keep going down over time.",
-    "A situation where prices of things stay the same over time.",
-    "A situation where more things are produced over time."],
+    question: 'What is SQL?',
+    options: ["A programming language used for creating websites.",
+    "A database management system.",
+    "A text editor for writing code.",
+    "A hardware component of a computer."],
+    answer: "2"
+    },
+    {
+    question: "What does SQL stand for?",
+    options: ["Structured Query Language",
+    "Sequential Query Language",
+    "Simple Query Language",
+    "Structured Query Logic"],
     answer: "1"
     },
     {
-    question: "How do we measure inflation?",
-    options: ["By looking at how many people are working in an economy.",
-    "By checking how much money is being exchanged in an economy.",
-    "By comparing the prices of things in a market.",
-    "By counting how many goods are being imported or exported."],
+    question: "What is a database?",
+    options: ["A collection of programming code.",
+    "A software application used for browsing the internet.",
+    "A structured collection of data.",
+    "A physical storage device for data."],
     answer: "3"
     },
     {
-    question: "What happens to the value of money when there is inflation?",
-    options: ["It stays the same.",
-    "It increases.",
-    "It goes up and down randomly.",
-    "It decreases."],
-    answer: "4"
-    },
-    {
-    question: "How does inflation affect our lives?",
-    options: ["It makes things more affordable for us.",
-    "It has no effect on our lives.",
-    "It makes things more expensive for us.",
-    "It only affects us temporarily."],
+    question: "What is a table in SQL?",
+    options: ["A visual representation of data.",
+    "A set of rules for data validation.",
+    "A container for organizing related data in rows and columns.",
+    "A database management system."],
     answer: "3"
     },
     {
-    question: "What can cause inflation?",
-    options: ["When there is too much money available and not enough things to buy.",
-    "When there is not enough money and not enough things to buy.",
-    "When there is not enough money but lots of things to buy.",
-    "When there is too much money and lots of things to buy."],
+    question: "What is a primary key in SQL?",
+    options: ["A unique identifier for a table's column.",
+    "A data type used to store numbers.",
+    "A query used to retrieve data from a database.",
+    "A function used for mathematical calculations."],
     answer: "1"
     }
-    ]
+];
 
-  const topicBriefing = [
+const topicBriefing = [
     {
-      topic: [
-        "Inflation happens when prices of things keep going up over time. It means that the same amount of money can buy fewer things than before.",
-        "We measure inflation by comparing the prices of things in a market. We look at how much things cost compared to before.",
-        "When there is inflation, the value of money goes down. This means we can't buy as much with the same amount of money.",
-        "Inflation can make things more expensive for us, so our money doesn't go as far as it used to.",
-        "Inflation can be caused by there being too much money available and not enough things to buy."
+        topic: [
+            "SQL is a database management system used for storing, manipulating, and retrieving data.",
+            "SQL stands for Structured Query Language, and it provides a standardized way of interacting with databases.",
+            "A database is a structured collection of data that is organized and stored for easy access and retrieval.",
+            "In SQL, a table is a container for organizing related data. It consists of rows and columns.",
+            "A primary key is a unique identifier for a table's column. It ensures that each row in the table can be uniquely identified."
         ]
     }
-  ]
+];
+
   const welcomeMessage = ["Hi, this is an Interactive Learning Platform, with vintage looks and modern tech combined to give you the simple and clean learning experience"]
   const intructions = [
     "Read each question carefully and choose the correct answer.",
@@ -61,7 +62,7 @@ window.addEventListener('load', () => {
     "There are 5 questions in total.",
     "You can only proceed to the next question once you answer the current question correctly.",
     "At the end of learning, you can see the number attempts you took to understand the concept",
-    "Enjoy learning about inflation!",
+    "Enjoy the learning",
     "Start the quiz and have fun!",
     "Play the music below before clicking start (Optional)"
   ]

@@ -86,7 +86,7 @@ const topicBriefing = [
   const startAndValidateQuiz = async () => {
     // This function check user input and updated key value and allows to continue the quiz only if the answer is correct, also calculate the number of submit clicks count
     const inputField = document.querySelector('#input-1');
-        userInput = inputField.value;
+        userInput = inputField.value.toLowerCase();
         attemptCounter += 1;
         if (userInput === answerKey){
             disableElementDisplay("invalidAnswer");
@@ -153,7 +153,7 @@ const topicBriefing = [
 
   const getTheKey = async (questNum) => {
     //This function get the value of answer in given questions array and assigns its value to answerKey
-    answerKey = questions[questNum].answer;
+    answerKey = questions[questNum].answer.toLowerCase();
   }
 
   const startQuiz =  async (topicNum = 0) => {

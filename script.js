@@ -2,58 +2,191 @@
 window.addEventListener('load', () => {
   const questions = [
     {
-    question: 'What is SQL?',
-    options: ["A programming language used for creating websites.",
-    "A database management system.",
-    "A text editor for writing code.",
-    "A hardware component of a computer."],
-    answer: "2"
-    },
-    {
-    question: "What does SQL stand for?",
-    options: ["Structured Query Language",
-    "Sequential Query Language",
-    "Simple Query Language",
-    "Structured Query Logic"],
-    answer: "1"
-    },
-    {
-    question: "What is a database?",
-    options: ["A collection of programming code.",
-    "A software application used for browsing the internet.",
-    "A structured collection of data.",
-    "A physical storage device for data."],
+    question: "What is a database management system (DBMS)?",
+    options: [
+        "A hardware component of a computer.",
+        "A programming language used for creating websites.",
+        "Software that allows users to create, manage, and manipulate databases.",
+        "A type of spreadsheet software."
+    ],
     answer: "3"
     },
     {
-    question: "What is a table in SQL?",
-    options: ["A visual representation of data.",
-    "A set of rules for data validation.",
-    "A container for organizing related data in rows and columns.",
-    "A database management system."],
+    question: "What is a SQL query?",
+    options: [
+        "A command used to search for files on a computer.",
+        "A mathematical formula used in calculations.",
+        "A language used to communicate with a database and retrieve data.",
+        "A type of data structure."
+    ],
+    answer: "3"
+    },
+    {
+    question: "What is a SELECT statement in SQL used for?",
+    options: [
+        "Inserting new data into a table.",
+        "Updating existing data in a table.",
+        "Deleting data from a table.",
+        "Retrieving data from a table."
+    ],
+    answer: "4"
+    },
+    {
+    question: "What is a WHERE clause in SQL?",
+    options: [
+        "A keyword used to specify the table to query.",
+        "A keyword used to sort the query results.",
+        "A keyword used to filter the query results based on a condition.",
+        "A keyword used to join multiple tables together."
+    ],
     answer: "3"
     },
     {
     question: "What is a primary key in SQL?",
-    options: ["A unique identifier for a table's column.",
-    "A data type used to store numbers.",
-    "A query used to retrieve data from a database.",
-    "A function used for mathematical calculations."],
+    options: [
+        "A unique identifier for a table's column.",
+        "A type of data validation.",
+        "A command used to create a new table.",
+        "A keyword used to group data in a table."
+    ],
     answer: "1"
+    },
+    {
+    question: "What is the purpose of the INSERT statement in SQL?",
+    options: [
+        "To retrieve data from a table.",
+        "To update existing data in a table.",
+        "To delete data from a table.",
+        "To insert new data into a table."
+    ],
+    answer: "4"
+    },
+    {
+    question: "What is the purpose of the UPDATE statement in SQL?",
+    options: [
+        "To retrieve data from a table.",
+        "To insert new data into a table.",
+        "To delete data from a table.",
+        "To update existing data in a table."
+    ],
+    answer: "4"
+    },
+    {
+    question: "What is the purpose of the DELETE statement in SQL?",
+    options: [
+        "To retrieve data from a table.",
+        "To insert new data into a table.",
+        "To delete data from a table.",
+        "To update existing data in a table."
+    ],
+    answer: "3"
+    },
+    {
+    question: "What is a JOIN operation in SQL used for?",
+    options: [
+        "To retrieve data from multiple tables based on a related column.",
+        "To sort the data in a table.",
+        "To filter the data in a table based on a condition.",
+        "To group the data in a table based on a column."
+    ],
+    answer: "1"
+    },
+    {
+    question: "What is a foreign key in SQL?",
+    options: [
+        "A type of data validation.",
+        "A command used to create a new table.",
+        "A keyword used to join multiple tables together.",
+        "A column in a table that refers to the primary key of another table."
+    ],
+    answer: "4"
+    },
+    {
+    question: "What is the purpose of the ORDER BY clause in SQL?",
+    options: [
+        "To insert new data into a table.",
+        "To update existing data in a table.",
+        "To delete data from a table.",
+        "To sort the query results based on a column."
+    ],
+    answer: "4"
+    },
+    {
+    question: "What is the purpose of the GROUP BY clause in SQL?",
+    options: [
+        "To retrieve data from multiple tables based on a related column.",
+        "To sort the data in a table.",
+        "To filter the data in a table based on a condition.",
+        "To group the data in a table based on a column."
+    ],
+    answer: "4"
+    },
+    {
+    question: "What is the purpose of the HAVING clause in SQL?",
+    options: [
+        "To filter the data in a table based on a condition.",
+        "To sort the data in a table.",
+        "To group the data in a table based on a column.",
+        "To retrieve data from multiple tables based on a related column."
+    ],
+    answer: "1"
+    },
+    {
+    question: "What is a subquery in SQL?",
+    options: [
+        "A command used to create a new table.",
+        "A query nested inside another query.",
+        "A keyword used to join multiple tables together.",
+        "A type of database storage structure."
+    ],
+    answer: "2"
+    },
+    {
+    question: "What is the purpose of the LIMIT clause in SQL?",
+    options: [
+        "To insert new data into a table.",
+        "To update existing data in a table.",
+        "To delete data from a table.",
+        "To limit the number of rows returned by a query."
+    ],
+    answer: "4"
+    },
+    {
+    question: "What is the purpose of the DISTINCT keyword in SQL?",
+    options: [
+        "To retrieve data from multiple tables based on a related column.",
+        "To sort the data in a table.",
+        "To filter the data in a table based on a condition.",
+        "To remove duplicate values from the query results."
+    ],
+    answer: "4"
     }
 ];
 
 const topicBriefing = [
     {
         topic: [
-            "SQL is a database management system used for storing, manipulating, and retrieving data.",
-            "SQL stands for Structured Query Language, and it provides a standardized way of interacting with databases.",
-            "A database is a structured collection of data that is organized and stored for easy access and retrieval.",
-            "In SQL, a table is a container for organizing related data. It consists of rows and columns.",
-            "A primary key is a unique identifier for a table's column. It ensures that each row in the table can be uniquely identified."
+            "SQL (Structured Query Language) is a programming language used for managing and manipulating databases.",
+            "A database management system (DBMS) is software that allows users to create, manage, and manipulate databases.",
+            "A SQL query is a command used to communicate with a database and retrieve data.",
+            "The SELECT statement is used to retrieve data from a table in SQL.",
+            "The WHERE clause is used to filter the query results based on a condition in SQL.",
+            "A primary key is a unique identifier for a table's column.",
+            "The INSERT statement is used to insert new data into a table.",
+            "The UPDATE statement is used to update existing data in a table.",
+            "The DELETE statement is used to delete data from a table.",
+            "A JOIN operation is used to retrieve data from multiple tables based on a related column.",
+            "A foreign key is a column in a table that refers to the primary key of another table.",
+            "The ORDER BY clause is used to sort the query results based on a column in SQL.",
+            "The GROUP BY clause is used to group the data in a table based on a column in SQL.",
+            "The HAVING clause is used to filter the data in a table based on a condition in SQL.",
+            "A subquery is a query nested inside another query in SQL.",
+            "The LIMIT clause is used to limit the number of rows returned by a query in SQL.",
+            "The DISTINCT keyword is used to remove duplicate values from the query results in SQL."
         ]
     }
 ];
+
 
   const welcomeMessage = ["Hi, this is an Interactive Learning Platform, with vintage looks and modern tech combined to give you the simple and clean learning experience"]
   const intructions = [

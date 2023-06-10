@@ -166,7 +166,6 @@ window.addEventListener('load', () => {
 const topicBriefing = [
     {
         topic: [
-            "SQL (Structured Query Language) is a programming language used for managing and manipulating databases.",
             "A database management system (DBMS) is software that allows users to create, manage, and manipulate databases.",
             "A SQL query is a command used to communicate with a database and retrieve data.",
             "The SELECT statement is used to retrieve data from a table in SQL.",

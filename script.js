@@ -1,197 +1,306 @@
 
 window.addEventListener('load', () => {
   const questions = [
-    {
-    question: "What is a database management system (DBMS)?",
+  {
+    question: "What is encapsulation in OOP?",
     options: [
-        "A hardware component of a computer.",
-        "A programming language used for creating websites.",
-        "Software that allows users to create, manage, and manipulate databases.",
-        "A type of spreadsheet software."
-    ],
-    answer: "3"
-    },
-    {
-    question: "What is a SQL query?",
-    options: [
-        "A command used to search for files on a computer.",
-        "A mathematical formula used in calculations.",
-        "A language used to communicate with a database and retrieve data.",
-        "A type of data structure."
-    ],
-    answer: "3"
-    },
-    {
-    question: "What is a SELECT statement in SQL used for?",
-    options: [
-        "Inserting new data into a table.",
-        "Updating existing data in a table.",
-        "Deleting data from a table.",
-        "Retrieving data from a table."
-    ],
-    answer: "4"
-    },
-    {
-    question: "What is a WHERE clause in SQL?",
-    options: [
-        "A keyword used to specify the table to query.",
-        "A keyword used to sort the query results.",
-        "A keyword used to filter the query results based on a condition.",
-        "A keyword used to join multiple tables together."
-    ],
-    answer: "3"
-    },
-    {
-    question: "What is a primary key in SQL?",
-    options: [
-        "A unique identifier for a table's column.",
-        "A type of data validation.",
-        "A command used to create a new table.",
-        "A keyword used to group data in a table."
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of reusing existing code to create new objects.",
+      "A process of representing data and behavior as objects."
     ],
     answer: "1"
-    },
-    {
-    question: "What is the purpose of the INSERT statement in SQL?",
+  },
+  {
+    question: "What is inheritance in OOP?",
     options: [
-        "To retrieve data from a table.",
-        "To update existing data in a table.",
-        "To delete data from a table.",
-        "To insert new data into a table."
-    ],
-    answer: "4"
-    },
-    {
-    question: "What is the purpose of the UPDATE statement in SQL?",
-    options: [
-        "To retrieve data from a table.",
-        "To insert new data into a table.",
-        "To delete data from a table.",
-        "To update existing data in a table."
-    ],
-    answer: "4"
-    },
-    {
-    question: "What is the purpose of the DELETE statement in SQL?",
-    options: [
-        "To retrieve data from a table.",
-        "To insert new data into a table.",
-        "To delete data from a table.",
-        "To update existing data in a table."
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of creating new classes from existing classes.",
+      "A process of representing data and behavior as objects."
     ],
     answer: "3"
-    },
-    {
-    question: "What is a JOIN operation in SQL used for?",
+  },
+  {
+    question: "What is polymorphism in OOP?",
     options: [
-        "To retrieve data from multiple tables based on a related column.",
-        "To sort the data in a table.",
-        "To filter the data in a table based on a condition.",
-        "To group the data in a table based on a column."
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of reusing existing code to create new objects.",
+      "A process of using an object to refer to instances of different classes."
+    ],
+    answer: "4"
+  },
+  {
+    question: "What is abstraction in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of creating new classes from existing classes.",
+      "A process of representing data and behavior as objects."
     ],
     answer: "1"
-    },
-    {
-    question: "What is a foreign key in SQL?",
+  },
+  {
+    question: "What is a class in OOP?",
     options: [
-        "A type of data validation.",
-        "A command used to create a new table.",
-        "A keyword used to join multiple tables together.",
-        "A column in a table that refers to the primary key of another table."
-    ],
-    answer: "4"
-    },
-    {
-    question: "What is the purpose of the ORDER BY clause in SQL?",
-    options: [
-        "To insert new data into a table.",
-        "To update existing data in a table.",
-        "To delete data from a table.",
-        "To sort the query results based on a column."
-    ],
-    answer: "4"
-    },
-    {
-    question: "What is the purpose of the GROUP BY clause in SQL?",
-    options: [
-        "To retrieve data from multiple tables based on a related column.",
-        "To sort the data in a table.",
-        "To filter the data in a table based on a condition.",
-        "To group the data in a table based on a column."
-    ],
-    answer: "4"
-    },
-    {
-    question: "What is the purpose of the HAVING clause in SQL?",
-    options: [
-        "To filter the data in a table based on a condition.",
-        "To sort the data in a table.",
-        "To group the data in a table based on a column.",
-        "To retrieve data from multiple tables based on a related column."
+      "A blueprint for creating objects that defines their properties and methods.",
+      "An instance of an object.",
+      "A type of variable.",
+      "A method of object creation."
     ],
     answer: "1"
-    },
-    {
-    question: "What is a subquery in SQL?",
+  },
+  {
+    question: "What is an object in OOP?",
     options: [
-        "A command used to create a new table.",
-        "A query nested inside another query.",
-        "A keyword used to join multiple tables together.",
-        "A type of database storage structure."
+      "A blueprint for creating objects that defines their properties and methods.",
+      "An instance of a class.",
+      "A type of variable.",
+      "A method of object creation."
     ],
     answer: "2"
-    },
-    {
-    question: "What is the purpose of the LIMIT clause in SQL?",
+  },
+  {
+    question: "What is a constructor in OOP?",
     options: [
-        "To insert new data into a table.",
-        "To update existing data in a table.",
-        "To delete data from a table.",
-        "To limit the number of rows returned by a query."
+      "A method used to create an object.",
+      "A method used to destroy an object.",
+      "A method used to access object properties.",
+      "A method used to modify object behavior."
+    ],
+    answer: "1"
+  },
+  {
+    question: "What is method overriding in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of redefining a method in a subclass that is already defined in its superclass.",
+      "A process of using an object to refer to instances of different classes."
+    ],
+    answer: "3"
+  },
+  {
+    question: "What is method overloading in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of defining multiple methods with the same name but different parameters.",
+      "A process of representing data and behavior as objects."
+    ],
+    answer: "3"
+  },
+  {
+    question: "What is a superclass in OOP?",
+    options: [
+      "A class that inherits properties and methods from another class.",
+      "A class that is inherited by another class.",
+      "A class that cannot be instantiated.",
+      "A class that defines the blueprint for creating objects."
+    ],
+    answer: "2"
+  },
+  {
+    question: "What is an interface in OOP?",
+    options: [
+      "A class that inherits properties and methods from another class.",
+      "A class that is inherited by another class.",
+      "A class that cannot be instantiated.",
+      "A contract that defines the methods a class must implement."
     ],
     answer: "4"
-    },
-    {
-    question: "What is the purpose of the DISTINCT keyword in SQL?",
+  },
+  {
+    question: "What is a static method in OOP?",
     options: [
-        "To retrieve data from multiple tables based on a related column.",
-        "To sort the data in a table.",
-        "To filter the data in a table based on a condition.",
-        "To remove duplicate values from the query results."
+      "A method that can be accessed without creating an instance of a class.",
+      "A method that is called automatically when an object is created.",
+      "A method that is inherited from a superclass.",
+      "A method that is overridden in a subclass."
+    ],
+    answer: "1"
+  },
+  {
+    question: "What is composition in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of creating new classes from existing classes.",
+      "A process of representing data and behavior as objects."
+    ],
+    answer: "2"
+  },
+  {
+    question: "What is method chaining in OOP?",
+    options: [
+      "A process of calling multiple methods on an object in a single line of code.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of reusing existing code to create new objects.",
+      "A process of using an object to refer to instances of different classes."
+    ],
+    answer: "1"
+  },
+  {
+    question: "What is a getter method in OOP?",
+    options: [
+      "A method used to modify object behavior.",
+      "A method used to get the value of an object's property.",
+      "A method used to create an object.",
+      "A method used to access object properties."
+    ],
+    answer: "2"
+  },
+  {
+    question: "What is a setter method in OOP?",
+    options: [
+      "A method used to modify object behavior.",
+      "A method used to get the value of an object's property.",
+      "A method used to create an object.",
+      "A method used to set the value of an object's property."
     ],
     answer: "4"
-    }
+  },
+  {
+    question: "What is data abstraction in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of reusing existing code to create new objects.",
+      "A process of representing data and behavior as objects."
+    ],
+    answer: "1"
+  },
+  {
+    question: "What is method visibility in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of defining multiple methods with the same name but different parameters.",
+      "A process of specifying the accessibility of methods within a class."
+    ],
+    answer: "4"
+  },
+  {
+    question: "What is a constructor overloading in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of defining multiple constructors with different parameters in a class.",
+      "A process of reusing existing code to create new objects.",
+      "A process of using an object to refer to instances of different classes."
+    ],
+    answer: "2"
+  },
+  {
+    question: "What is a destructor in OOP?",
+    options: [
+      "A method used to create an object.",
+      "A method used to destroy an object.",
+      "A method used to access object properties.",
+      "A method used to modify object behavior."
+    ],
+    answer: "2"
+  },
+  {
+    question: "What is method hiding in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of redefining a static method in a subclass that is already defined in its superclass.",
+      "A process of using an object to refer to instances of different classes."
+    ],
+    answer: "3"
+  },
+  {
+    question: "What is a namespace in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A container for organizing classes and other code elements.",
+      "A process of representing data and behavior as objects."
+    ],
+    answer: "3"
+  },
+  {
+    question: "What is method signature in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of specifying the name and parameters of a method.",
+      "A process of using an object to refer to instances of different classes."
+    ],
+    answer: "3"
+  },
+  {
+    question: "What is multiple inheritance in OOP?",
+    options: [
+      "A process of inheriting properties and methods from multiple superclasses.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of creating new classes from existing classes.",
+      "A process of representing data and behavior as objects."
+    ],
+    answer: "1"
+  },
+  {
+    question: "What is method resolution order in OOP?",
+    options: [
+      "A process of hiding internal implementation details and providing a public interface.",
+      "A process of combining multiple objects to form a new object.",
+      "A process of determining the order in which methods are called in a class hierarchy.",
+      "A process of using an object to refer to instances of different classes."
+    ],
+    answer: "3"
+  },
+  {
+    question: "What is the difference between composition and inheritance in OOP?",
+    options: [
+      "Composition is a 'has-a' relationship, while inheritance is an 'is-a' relationship.",
+      "Composition allows objects to be composed of other objects, while inheritance allows objects to inherit properties and methods from a superclass.",
+      "Composition is a top-down approach, while inheritance is a bottom-up approach.",
+      "Composition is used for code reuse, while inheritance is used for code organization."
+    ],
+    answer: "2"
+  }
 ];
 
 const topicBriefing = [
-    {
-        topic: [
-            "A database management system (DBMS) is software that allows users to create, manage, and manipulate databases.",
-            "A SQL query is a command used to communicate with a database and retrieve data.",
-            "The SELECT statement is used to retrieve data from a table in SQL.",
-            "The WHERE clause is used to filter the query results based on a condition in SQL.",
-            "A primary key is a unique identifier for a table's column.",
-            "The INSERT statement is used to insert new data into a table.",
-            "The UPDATE statement is used to update existing data in a table.",
-            "The DELETE statement is used to delete data from a table.",
-            "A JOIN operation is used to retrieve data from multiple tables based on a related column.",
-            "A foreign key is a column in a table that refers to the primary key of another table.",
-            "The ORDER BY clause is used to sort the query results based on a column in SQL.",
-            "The GROUP BY clause is used to group the data in a table based on a column in SQL.",
-            "The HAVING clause is used to filter the data in a table based on a condition in SQL.",
-            "A subquery is a query nested inside another query in SQL.",
-            "The LIMIT clause is used to limit the number of rows returned by a query in SQL.",
-            "The DISTINCT keyword is used to remove duplicate values from the query results in SQL."
-        ]
-    }
+  {
+    topic: [
+      "Encapsulation is the process of hiding internal implementation details and providing a public interface.",
+      "Inheritance allows creating new classes from existing classes, enabling code reuse and creating hierarchical relationships.",
+      "Polymorphism allows using an object to refer to instances of different classes.",
+      "Abstraction focuses on representing data and behavior as objects, while hiding unnecessary details.",
+      "A class is a blueprint for creating objects that defines their properties and methods.",
+      "An object is an instance of a class, which holds its own state and behavior.",
+      "A constructor is a special method used to create an object and initialize its state.",
+      "Method overriding is the process of redefining a method in a subclass that is already defined in its superclass.",
+      "Method overloading is the process of defining multiple methods with the same name but different parameters.",
+      "A superclass is a class that is inherited by another class.",
+      "An interface is a contract that defines the methods a class must implement.",
+      "A static method is a method that can be accessed without creating an instance of a class.",
+      "Composition is the process of combining multiple objects to form a new object.",
+      "Method chaining allows calling multiple methods on an object in a single line of code.",
+      "A getter method is used to get the value of an object's property.",
+      "A setter method is used to set the value of an object's property.",
+      "Data abstraction is the process of hiding internal implementation details and providing a public interface.",
+      "Method visibility specifies the accessibility of methods within a class.",
+      "Constructor overloading is the process of defining multiple constructors with different parameters in a class.",
+      "A destructor is a method used to destroy an object.",
+      "Method hiding is the process of redefining a static method in a subclass that is already defined in its superclass.",
+      "A namespace is a container for organizing classes and other code elements.",
+      "Method signature specifies the name and parameters of a method.",
+      "Multiple inheritance is the process of inheriting properties and methods from multiple superclasses.",
+      "Method resolution order determines the order in which methods are called in a class hierarchy.",
+      "Composition allows objects to be composed of other objects, while inheritance allows objects to inherit properties and methods from a superclass."
+    ]
+  }
 ];
-
 
   const welcomeMessage = ["Hi, this is an Interactive Learning Platform, with vintage looks and modern tech combined to give you the simple and clean learning experience"]
   const intructions = [
     "Read each question carefully and choose the correct answer.",
     "The topic and the questions are curated in such a way as to make them easier to understand for a 12-year-old kid.",
-    "There are 5 questions in total.",
+    `There are ${questions.length} questions in total.`,
     "You can only proceed to the next question once you answer the current question correctly.",
     "At the end of learning, you can see the number attempts you took to understand the concept",
     "Enjoy the learning",

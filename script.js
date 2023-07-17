@@ -336,7 +336,6 @@ const topicBriefing = [
         userInput = inputField.value.toLowerCase();
         attemptCounter += 1;
         if (userInput === answerKey){
-            userInput = "";
             disableElementDisplay("invalidAnswer");
             clearDisplay();
             topicNum =  topicNum + 1;
@@ -352,6 +351,7 @@ const topicBriefing = [
         else {
           enableElementDisplay("invalidAnswer");
         }
+        inputField.value = "";
   }
 
   const displayMessage = async (message, className = "text", speed = typingSpeed, typeFunc = typeText) => {
@@ -398,7 +398,7 @@ const topicBriefing = [
   const displayArrayText = async (textArray) =>{
     // This function takes an array element and prints the elements by looping and passing every element in it to displayMessage function
     for (let i = 0; i < textArray.length; i++){
-      await displayMessage(textArray[i], "text", 10);
+      await displayMessage(textArray[i], "text", 100, typeWords);
    }
   }
 
@@ -410,7 +410,7 @@ const topicBriefing = [
 
   const displayTopic = async (topicNum) => {
     // This function takes topic array index and display the topic with respective index value also, adds a CSS class to it and speed of the topic
-   await displayMessage(topicBriefing[0].topic[topicNum], "topicText", 125);
+   await displayMessage(topicBriefing[0].topic[topicNum], "topicText", 155, typeWords);
   }
 
   const displayQuestion = async (questNum) => {
@@ -496,7 +496,8 @@ resolve();
 };
 
 const main = async () =>{
-loginSignUp();
+//loginSignUp();
+introFunc();
 }
 
 main();

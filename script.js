@@ -307,7 +307,7 @@ const topicBriefing = [
     "Start the quiz and have fun!",
     "Play the music below before clicking start (Optional)"
   ]
-
+  const login = "Hi There, Please enter your User Name and Password below '↓' ";
   const endMessage = " You're Are Awesome";
   const typingSpeed = 1;
   const mainDiv = document.querySelector('#root');
@@ -320,6 +320,12 @@ const topicBriefing = [
   })
 
   const submitButton = document.querySelector('#submit-1');
+  const loginButton = document.querySelector('#login');
+
+  loginButton.addEventListener('click', async () => {
+    await getUserDetail();
+  });
+
   submitButton.addEventListener('click', async () => {
     await startAndValidateQuiz();
   });
@@ -330,6 +336,7 @@ const topicBriefing = [
         userInput = inputField.value.toLowerCase();
         attemptCounter += 1;
         if (userInput === answerKey){
+            userInput = "";
             disableElementDisplay("invalidAnswer");
             clearDisplay();
             topicNum =  topicNum + 1;
@@ -347,14 +354,40 @@ const topicBriefing = [
         }
   }
 
-  const displayMessage = async (message, className = "text", speed = typingSpeed) => {
+  const displayMessage = async (message, className = "text", speed = typingSpeed, typeFunc = typeText) => {
     // This func takes two arguments a message and a className to add and create a new elemnt inside the root div
     const welcomeMessageElement = document.createElement('p');
     welcomeMessageElement.classList.add(className);
     mainDiv.appendChild(welcomeMessageElement);
-    await typeText(welcomeMessageElement, message, speed);
+    await typeFunc(welcomeMessageElement, message, speed);
   } 
-
+  const loginSignUp = async () => {
+    await displayMessage(login, "loginSigUp", 100, typeWords);
+    await enableElementDisplay("userName", "password");
+    await enableElementDisplay('login');
+  }
+  const getUserDetail = async () => {
+    const userName = document.querySelector('#userName').value;
+    const password = document.querySelector('#password').value;;
+    const response = await fetch('http://localhost:3000/user/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({userName, password})
+    })
+    const data = await response.json();
+    if (data){
+      clearDisplay();
+      disableElementDisplay("userName", "password");
+      disableElementDisplay("login");
+      console.log(data.email);
+      console.log(data);
+      introFunc();
+    } else {
+      alert("Invalid Password");
+    }
+  }
   const introFunc = async () =>{
     // This function prints Welcome and Instruction messages and enables start and audio player display
     await displayArrayText(welcomeMessage);
@@ -446,8 +479,24 @@ const topicBriefing = [
     });
   };
 
-const main = () =>{
-  introFunc();
+const typeWords = async (pElement, text, speed) => {
+//This function takes an HTML element, a string, and speed as arguments and creates a typing word effect with the assigned speed in the pElement
+return new Promise(resolve => {
+let i = 0;
+const typing = setInterval(() => {
+const wordArrary = text.split(' ');
+pElement.textContent += wordArrary[i] + " ";
+i++;
+if (i > wordArrary.length -1) {
+clearInterval(typing);
+resolve();
+}
+}, speed);
+});
+};
+
+const main = async () =>{
+loginSignUp();
 }
 
 main();

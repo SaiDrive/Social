@@ -1,314 +1,136 @@
 
 window.addEventListener('load', () => {
   const questions = [
-  {
-    question: "What is encapsulation in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of reusing existing code to create new objects.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is inheritance in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of creating new classes from existing classes.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "3"
-  },
-  {
-    question: "What is polymorphism in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of reusing existing code to create new objects.",
-      "A process of using an object to refer to instances of different classes."
-    ],
-    answer: "4"
-  },
-  {
-    question: "What is abstraction in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of creating new classes from existing classes.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is a class in OOP?",
-    options: [
-      "A blueprint for creating objects that defines their properties and methods.",
-      "An instance of an object.",
-      "A type of variable.",
-      "A method of object creation."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is an object in OOP?",
-    options: [
-      "A blueprint for creating objects that defines their properties and methods.",
-      "An instance of a class.",
-      "A type of variable.",
-      "A method of object creation."
-    ],
-    answer: "2"
-  },
-  {
-    question: "What is a constructor in OOP?",
-    options: [
-      "A method used to create an object.",
-      "A method used to destroy an object.",
-      "A method used to access object properties.",
-      "A method used to modify object behavior."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is method overriding in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of redefining a method in a subclass that is already defined in its superclass.",
-      "A process of using an object to refer to instances of different classes."
-    ],
-    answer: "3"
-  },
-  {
-    question: "What is method overloading in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of defining multiple methods with the same name but different parameters.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "3"
-  },
-  {
-    question: "What is a superclass in OOP?",
-    options: [
-      "A class that inherits properties and methods from another class.",
-      "A class that is inherited by another class.",
-      "A class that cannot be instantiated.",
-      "A class that defines the blueprint for creating objects."
-    ],
-    answer: "2"
-  },
-  {
-    question: "What is an interface in OOP?",
-    options: [
-      "A class that inherits properties and methods from another class.",
-      "A class that is inherited by another class.",
-      "A class that cannot be instantiated.",
-      "A contract that defines the methods a class must implement."
-    ],
-    answer: "4"
-  },
-  {
-    question: "What is a static method in OOP?",
-    options: [
-      "A method that can be accessed without creating an instance of a class.",
-      "A method that is called automatically when an object is created.",
-      "A method that is inherited from a superclass.",
-      "A method that is overridden in a subclass."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is composition in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of creating new classes from existing classes.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "2"
-  },
-  {
-    question: "What is method chaining in OOP?",
-    options: [
-      "A process of calling multiple methods on an object in a single line of code.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of reusing existing code to create new objects.",
-      "A process of using an object to refer to instances of different classes."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is a getter method in OOP?",
-    options: [
-      "A method used to modify object behavior.",
-      "A method used to get the value of an object's property.",
-      "A method used to create an object.",
-      "A method used to access object properties."
-    ],
-    answer: "2"
-  },
-  {
-    question: "What is a setter method in OOP?",
-    options: [
-      "A method used to modify object behavior.",
-      "A method used to get the value of an object's property.",
-      "A method used to create an object.",
-      "A method used to set the value of an object's property."
-    ],
-    answer: "4"
-  },
-  {
-    question: "What is data abstraction in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of reusing existing code to create new objects.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is method visibility in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of defining multiple methods with the same name but different parameters.",
-      "A process of specifying the accessibility of methods within a class."
-    ],
-    answer: "4"
-  },
-  {
-    question: "What is a constructor overloading in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of defining multiple constructors with different parameters in a class.",
-      "A process of reusing existing code to create new objects.",
-      "A process of using an object to refer to instances of different classes."
-    ],
-    answer: "2"
-  },
-  {
-    question: "What is a destructor in OOP?",
-    options: [
-      "A method used to create an object.",
-      "A method used to destroy an object.",
-      "A method used to access object properties.",
-      "A method used to modify object behavior."
-    ],
-    answer: "2"
-  },
-  {
-    question: "What is method hiding in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of redefining a static method in a subclass that is already defined in its superclass.",
-      "A process of using an object to refer to instances of different classes."
-    ],
-    answer: "3"
-  },
-  {
-    question: "What is a namespace in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A container for organizing classes and other code elements.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "3"
-  },
-  {
-    question: "What is method signature in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of specifying the name and parameters of a method.",
-      "A process of using an object to refer to instances of different classes."
-    ],
-    answer: "3"
-  },
-  {
-    question: "What is multiple inheritance in OOP?",
-    options: [
-      "A process of inheriting properties and methods from multiple superclasses.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of creating new classes from existing classes.",
-      "A process of representing data and behavior as objects."
-    ],
-    answer: "1"
-  },
-  {
-    question: "What is method resolution order in OOP?",
-    options: [
-      "A process of hiding internal implementation details and providing a public interface.",
-      "A process of combining multiple objects to form a new object.",
-      "A process of determining the order in which methods are called in a class hierarchy.",
-      "A process of using an object to refer to instances of different classes."
-    ],
-    answer: "3"
-  },
-  {
-    question: "What is the difference between composition and inheritance in OOP?",
-    options: [
-      "Composition is a 'has-a' relationship, while inheritance is an 'is-a' relationship.",
-      "Composition allows objects to be composed of other objects, while inheritance allows objects to inherit properties and methods from a superclass.",
-      "Composition is a top-down approach, while inheritance is a bottom-up approach.",
-      "Composition is used for code reuse, while inheritance is used for code organization."
-    ],
-    answer: "2"
-  }
-];
+    {
+      question: "Which of the following is a primitive data type in JavaScript?",
+      options: [
+        "Object",
+        "Array",
+        "String",
+        "Function"
+      ],
+      answer: "3"
+    },
+    {
+      question: "What keyword is used to declare a block scope variable in JavaScript?",
+      options: [
+        "let",
+        "var",
+        "const",
+        "set"
+      ],
+      answer: "1"
+    },
+    {
+      question: "How do you check the type and value of a variable in JavaScript?",
+      options: [
+        "typeof",
+        "type",
+        "val()",
+        "checkType()"
+      ],
+      answer: "1"
+    },
+    {
+      question: "Which function is used to parse a string to an integer in JavaScript?",
+      options: [
+        "int()",
+        "parseInteger()",
+        "parseInt()",
+        "toInteger()"
+      ],
+      answer: "3"
+    },
+    {
+      question: "What symbol is used for multiline comments in JavaScript?",
+      options: [
+        "//",
+        "/* */",
+        "#",
+        "--"
+      ],
+      answer: "2"
+    },
+    {
+      question: "Which method is used to add elements to the end of an array in JavaScript?",
+      options: [
+        "push()",
+        "add()",
+        "append()",
+        "addToEnd()"
+      ],
+      answer: "1"
+    },
+    {
+      question: "How do you write 'Hello, World!' in an alert box using JavaScript?",
+      options: [
+        "alertBox('Hello, World!');",
+        "alert('Hello, World!');",
+        "msgBox('Hello, World!');",
+        "message('Hello, World!');"
+      ],
+      answer: "2"
+    },
+    {
+      question: "What operator is used for strict equality comparison in JavaScript?",
+      options: [
+        "==",
+        "===",
+        "!=",
+        "!=="
+      ],
+      answer: "2"
+    },
+    {
+      question: "Which loop is used to iterate through an array in JavaScript?",
+      options: [
+        "for-in loop",
+        "while loop",
+        "do-while loop",
+        "for loop"
+      ],
+      answer: "4"
+    },
+    {
+      question: "What keyword is used to prevent variables from being modified in JavaScript?",
+      options: [
+        "const",
+        "var",
+        "let",
+        "freeze"
+      ],
+      answer: "1"
+    }
+  ];
+  
+  const topicBriefing = [
+    {
+      topic: [
+        "Primitive data types in JavaScript include strings, numbers, booleans, null, undefined, and symbols.",
+        "Block scope variables are declared using 'let' in JavaScript.",
+        "The 'typeof' operator is used to check the type and value of a variable in JavaScript.",
+        "The 'parseInt()' function is used to parse a string to an integer in JavaScript.",
+        "Comments in JavaScript start with '//' for single-line comments and '/* */' for multi-line comments.",
+        "The 'push()' method is used to add elements to the end of an array in JavaScript.",
+        "To display 'Hello, World!' in an alert box in JavaScript, you use the 'alert('Hello, World!');' function.",
+        "The '===' operator is used for strict equality comparison in JavaScript.",
+        "The 'for' loop is commonly used to iterate through an array in JavaScript.",
+        "In JavaScript, the 'const' keyword is used to create constants that cannot be modified."
+      ]
+    }
+  ];  
+  
 
-const topicBriefing = [
-  {
-    topic: [
-      "Encapsulation is the process of hiding internal implementation details and providing a public interface.",
-      "Inheritance allows creating new classes from existing classes, enabling code reuse and creating hierarchical relationships.",
-      "Polymorphism allows using an object to refer to instances of different classes.",
-      "Abstraction focuses on representing data and behavior as objects, while hiding unnecessary details.",
-      "A class is a blueprint for creating objects that defines their properties and methods.",
-      "An object is an instance of a class, which holds its own state and behavior.",
-      "A constructor is a special method used to create an object and initialize its state.",
-      "Method overriding is the process of redefining a method in a subclass that is already defined in its superclass.",
-      "Method overloading is the process of defining multiple methods with the same name but different parameters.",
-      "A superclass is a class that is inherited by another class.",
-      "An interface is a contract that defines the methods a class must implement.",
-      "A static method is a method that can be accessed without creating an instance of a class.",
-      "Composition is the process of combining multiple objects to form a new object.",
-      "Method chaining allows calling multiple methods on an object in a single line of code.",
-      "A getter method is used to get the value of an object's property.",
-      "A setter method is used to set the value of an object's property.",
-      "Data abstraction is the process of hiding internal implementation details and providing a public interface.",
-      "Method visibility specifies the accessibility of methods within a class.",
-      "Constructor overloading is the process of defining multiple constructors with different parameters in a class.",
-      "A destructor is a method used to destroy an object.",
-      "Method hiding is the process of redefining a static method in a subclass that is already defined in its superclass.",
-      "A namespace is a container for organizing classes and other code elements.",
-      "Method signature specifies the name and parameters of a method.",
-      "Multiple inheritance is the process of inheriting properties and methods from multiple superclasses.",
-      "Method resolution order determines the order in which methods are called in a class hierarchy.",
-      "Composition allows objects to be composed of other objects, while inheritance allows objects to inherit properties and methods from a superclass."
-    ]
-  }
-];
-
-  const welcomeMessage = ["Hi, this is an Interactive Learning Platform, with vintage looks and modern tech combined to give you the simple and clean learning experience"]
+  const welcomeMessage = ["Welcome to the Offsprings Assesment Quizz"]
   const intructions = [
-    "Read each question carefully and choose the correct answer.",
-    "The topic and the questions are curated in such a way as to make them easier to understand for a 12-year-old kid.",
     `There are ${questions.length} questions in total.`,
     "You can only proceed to the next question once you answer the current question correctly.",
-    "At the end of learning, you can see the number attempts you took to understand the concept",
-    "Enjoy the learning",
+    "At the end of learning, you can see the number of attempts you took to understand the concept",
     "Start the quiz and have fun!",
     "Play the music below before clicking start (Optional)"
   ]
   const login = "Hi There, Please enter your User Name and Password below '↓' ";
-  const endMessage = " You're Are Awesome";
+  const endMessage = " You are Awesome";
   const typingSpeed = 1;
   const mainDiv = document.querySelector('#root');
   const startButton = document.querySelector('#startButton-1');
@@ -345,7 +167,7 @@ const topicBriefing = [
             else {
               disableElementDisplay("input-1", "submit-1");
               await displayMessage(`${endMessage}, you have taken "${attemptCounter - questions.length}" more attempts to finish it`);
-              await displayMessage('Designed and developed by "Digician" with Love..');
+              await displayMessage('Designed and developed for "OffSprings" with Love..');
             }
         }
         else {

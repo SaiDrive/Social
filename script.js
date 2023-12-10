@@ -203,7 +203,7 @@ window.addEventListener('load', () => {
       clearDisplay();
       disableElementDisplay("userName", "password");
       disableElementDisplay("login");
-      console.log(data.email);
+      console.log(data.phoneNumber);
       console.log(data);
       introFunc();
     } else {

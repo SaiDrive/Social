@@ -2,123 +2,147 @@
 window.addEventListener('load', () => {
   const questions = [
     {
-      question: "Which of the following is a primitive data type in JavaScript?",
+      question: "Enter the correct order of operations once you hit the search button for a website in a Internet browser",
       options: [
-        "Object",
-        "Array",
-        "String",
-        "Function"
+        "Browser contact the DNS server to lookup for Domain Name and find IP address",
+        "Browser closes the TCP connection",
+        "Browser Start searching the IP address within Browser Cache",
+        "Browser download HTML, CSS, Javascript, Images...etc recieved through HTTP response from server and render them as website",
+        "DNS resolver recursively lookup for the domain name and finds the IP address",
+        "Browser establish a http connection to send request and recieve response",
+        "Browser try to establish a TCP connection between the client and server"
+      ],
+      answer: "3157642"
+    },
+    {
+      question: "What does URL stand for?",
+      options: [
+        "Universal Resource Link",
+        "Uniform Resource Locator",
+        "Unified Resource Link",
+        "Uniform Resource Link"
+      ],
+      answer: "2"
+    },
+    {
+      question: "What does the 'scheme' part of a URL specify?",
+      options: [
+        "File format",
+        "Connection protocol",
+        "Resource type",
+        "Server location"
+      ],
+      answer: "2"
+    },
+    {
+      question: "What is the purpose of DNS lookup?",
+      options: [
+        "To encrypt the connection",
+        "To establish a TCP connection",
+        "To translate domain names to IP addresses",
+        "To cache browser data"
       ],
       answer: "3"
     },
     {
-      question: "What keyword is used to declare a block scope variable in JavaScript?",
+      question: "What is the role of the DNS resolver?",
       options: [
-        "let",
-        "var",
-        "const",
-        "set"
-      ],
-      answer: "1"
-    },
-    {
-      question: "How do you check the type and value of a variable in JavaScript?",
-      options: [
-        "typeof",
-        "type",
-        "val()",
-        "checkType()"
-      ],
-      answer: "1"
-    },
-    {
-      question: "Which function is used to parse a string to an integer in JavaScript?",
-      options: [
-        "int()",
-        "parseInteger()",
-        "parseInt()",
-        "toInteger()"
+        "To establish a TCP connection",
+        "To cache browser data",
+        "To query the Internet for IP addresses",
+        "To send HTTP requests"
       ],
       answer: "3"
     },
     {
-      question: "What symbol is used for multiline comments in JavaScript?",
+      question: "What happens if the IP address is not found in the browser cache?",
       options: [
-        "//",
-        "/* */",
-        "#",
-        "--"
+        "Browser sends an HTTP request",
+        "Operating system caches it",
+        "Operating system sends a DNS query to the Internet"
       ],
-      answer: "2"
+      answer: "3"
     },
     {
-      question: "Which method is used to add elements to the end of an array in JavaScript?",
+      question: "What is the purpose of the TCP connection between the browser and the server?",
       options: [
-        "push()",
-        "add()",
-        "append()",
-        "addToEnd()"
-      ],
-      answer: "1"
-    },
-    {
-      question: "How do you write 'Hello, World!' in an alert box using JavaScript?",
-      options: [
-        "alertBox('Hello, World!');",
-        "alert('Hello, World!');",
-        "msgBox('Hello, World!');",
-        "message('Hello, World!');"
-      ],
-      answer: "2"
-    },
-    {
-      question: "What operator is used for strict equality comparison in JavaScript?",
-      options: [
-        "==",
-        "===",
-        "!=",
-        "!=="
-      ],
-      answer: "2"
-    },
-    {
-      question: "Which loop is used to iterate through an array in JavaScript?",
-      options: [
-        "for-in loop",
-        "while loop",
-        "do-while loop",
-        "for loop"
+        "To encrypt data transmission",
+        "To establish an encrypted connection",
+        "To establish a network round trip",
+        "To send HTTP requests"
       ],
       answer: "4"
     },
     {
-      question: "What keyword is used to prevent variables from being modified in JavaScript?",
+      question: "What type of connection does modern browsers use to enhance loading speed?",
       options: [
-        "const",
-        "var",
-        "let",
-        "freeze"
+        "Keep-alive connection",
+        "SSL-TLS connection",
+        "Encrypted connection",
+        "One-time connection"
       ],
       answer: "1"
+    },
+    {
+      question: "What complex process is involved when establishing an HTTPS connection?",
+      options: [
+        "TCP handshake",
+        "SSL-TLS handshake",
+        "HTTP handshake",
+        "DNS lookup"
+      ],
+      answer: "2"
+    },
+    {
+      question: "What role does the browser play after receiving the server's response?",
+      options: [
+        "Rendering the HTML content",
+        "Encrypting the response",
+        "Establishing a new TCP connection",
+        "Handling DNS lookup"
+      ],
+      answer: "1"
+    },
+    {
+      question: "What happens if there are additional resources to load?",
+      options: [
+        "Browser repeats DNS lookup",
+        "Browser sends a new HTTP request",
+        "Browser establishes a TCP connection",
+        "Browser processes HTML content"
+      ],
+      answer: "2"
+    },
+    {
+      question: "What is the primary function of HTTP?",
+      options: [
+        "To establish TCP connections",
+        "To render HTML content",
+        "To send encrypted data",
+        "To send requests and receive responses"
+      ],
+      answer: "4"
+    },
+    {
+      question: "What do modern browsers do to fetch additional resources?",
+      options: [
+        "Repeat DNS lookup",
+        "Establish a new TCP connection",
+        "Process the HTML content",
+        "Make new HTTP requests"
+      ],
+      answer: "4"
     }
+    
   ];
   
   const topicBriefing = [
     {
       topic: [
-        "Primitive data types in JavaScript include strings, numbers, booleans, null, undefined, and symbols.",
-        "Block scope variables are declared using 'let' in JavaScript.",
-        "The 'typeof' operator is used to check the type and value of a variable in JavaScript.",
-        "The 'parseInt()' function is used to parse a string to an integer in JavaScript.",
-        "Comments in JavaScript start with '//' for single-line comments and '/* */' for multi-line comments.",
-        "The 'push()' method is used to add elements to the end of an array in JavaScript.",
-        "To display 'Hello, World!' in an alert box in JavaScript, you use the 'alert('Hello, World!');' function.",
-        "The '===' operator is used for strict equality comparison in JavaScript.",
-        "The 'for' loop is commonly used to iterate through an array in JavaScript.",
-        "In JavaScript, the 'const' keyword is used to create constants that cannot be modified."
+      
       ]
     }
-  ];  
+  ];
   
 
   const welcomeMessage = ["Welcome to the Offsprings Assesment Quizz"]
@@ -232,7 +256,9 @@ window.addEventListener('load', () => {
 
   const displayTopic = async (topicNum) => {
     // This function takes topic array index and display the topic with respective index value also, adds a CSS class to it and speed of the topic
-   await displayMessage(topicBriefing[0].topic[topicNum], "topicText", 155, typeWords);
+    if(topicBriefing[0].topic.length > 0){
+      await displayMessage(topicBriefing[0].topic[topicNum], "topicText", 155, typeWords);
+    }
   }
 
   const displayQuestion = async (questNum) => {

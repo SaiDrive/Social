@@ -1,140 +1,107 @@
 
 window.addEventListener('load', () => {
   const questions = [
-    {
-      question: "Enter the correct order of operations once you hit the search button for a website in a Internet browser",
-      options: [
-        "Browser contact the DNS server to lookup for Domain Name and find IP address",
-        "Browser closes the TCP connection",
-        "Browser Start searching the IP address within Browser Cache",
-        "Browser download HTML, CSS, Javascript, Images...etc recieved through HTTP response from server and render them as website",
-        "DNS resolver recursively lookup for the domain name and finds the IP address",
-        "Browser establish a http connection to send request and recieve response",
-        "Browser try to establish a TCP connection between the client and server"
-      ],
-      answer: "3157642"
-    },
-    {
-      question: "What does URL stand for?",
-      options: [
-        "Universal Resource Link",
-        "Uniform Resource Locator",
-        "Unified Resource Link",
-        "Uniform Resource Link"
-      ],
-      answer: "2"
-    },
-    {
-      question: "What does the 'scheme' part of a URL specify?",
-      options: [
-        "File format",
-        "Connection protocol",
-        "Resource type",
-        "Server location"
-      ],
-      answer: "2"
-    },
-    {
-      question: "What is the purpose of DNS lookup?",
-      options: [
-        "To encrypt the connection",
-        "To establish a TCP connection",
-        "To translate domain names to IP addresses",
-        "To cache browser data"
-      ],
-      answer: "3"
-    },
-    {
-      question: "What is the role of the DNS resolver?",
-      options: [
-        "To establish a TCP connection",
-        "To cache browser data",
-        "To query the Internet for IP addresses",
-        "To send HTTP requests"
-      ],
-      answer: "3"
-    },
-    {
-      question: "What happens if the IP address is not found in the browser cache?",
-      options: [
-        "Browser sends an HTTP request",
-        "Operating system caches it",
-        "Operating system sends a DNS query to the Internet"
-      ],
-      answer: "3"
-    },
-    {
-      question: "What is the purpose of the TCP connection between the browser and the server?",
-      options: [
-        "To encrypt data transmission",
-        "To establish an encrypted connection",
-        "To establish a network round trip",
-        "To send HTTP requests"
-      ],
-      answer: "4"
-    },
-    {
-      question: "What type of connection does modern browsers use to enhance loading speed?",
-      options: [
-        "Keep-alive connection",
-        "SSL-TLS connection",
-        "Encrypted connection",
-        "One-time connection"
-      ],
-      answer: "1"
-    },
-    {
-      question: "What complex process is involved when establishing an HTTPS connection?",
-      options: [
-        "TCP handshake",
-        "SSL-TLS handshake",
-        "HTTP handshake",
-        "DNS lookup"
-      ],
-      answer: "2"
-    },
-    {
-      question: "What role does the browser play after receiving the server's response?",
-      options: [
-        "Rendering the HTML content",
-        "Encrypting the response",
-        "Establishing a new TCP connection",
-        "Handling DNS lookup"
-      ],
-      answer: "1"
-    },
-    {
-      question: "What happens if there are additional resources to load?",
-      options: [
-        "Browser repeats DNS lookup",
-        "Browser sends a new HTTP request",
-        "Browser establishes a TCP connection",
-        "Browser processes HTML content"
-      ],
-      answer: "2"
-    },
-    {
-      question: "What is the primary function of HTTP?",
-      options: [
-        "To establish TCP connections",
-        "To render HTML content",
-        "To send encrypted data",
-        "To send requests and receive responses"
-      ],
-      answer: "4"
-    },
-    {
-      question: "What do modern browsers do to fetch additional resources?",
-      options: [
-        "Repeat DNS lookup",
-        "Establish a new TCP connection",
-        "Process the HTML content",
-        "Make new HTTP requests"
-      ],
-      answer: "4"
-    }
-    
-  ];
+      {
+          "question": "What is the result of the following arithmetic operation in JavaScript: (3 + 5) * 4 - 6?",
+          "options": ["26", "32", "30", "28"],
+          "answer": "1"
+      },
+      {
+          "question": "What is the value of x after this code executes: 'let x = 5; if (x > 3) { x = 10; } else { x = 0; }'?",
+          "options": ["5", "10", "3", "0"],
+          "answer": "2"
+      },
+      {
+          "question": "What value will 'result' hold after this switch case: 'let fruit = 'apple'; let result; switch (fruit) { case 'banana': result = 'yellow'; break; case 'apple': result = 'red'; break; default: result = 'unknown'; }'?",
+          "options": ["'yellow'", "'red'", "'apple'", "'unknown'"],
+          "answer": "2"
+      },
+      {
+          "question": "What will be the output of 'greet('Alice')' for the function: 'function greet(name) { return 'Hello, ' + name + '!'; }'?",
+          "options": ["'Hello, Alice!'", "'Hello, name!'", "'Hello, ' + name + '!'", "It will throw an error"],
+          "answer": "1"
+      },
+      {
+          "question": "Given the code: 'let num = 7; let result; if (num > 5) { if (num < 10) { result = 'Between 5 and 10'; } else { result = 'Greater than 10'; } } else { result = 'Less than or equal to 5'; }', what is the value of 'result'?",
+          "options": ["'Less than or equal to 5'", "'Between 5 and 10'", "'Greater than 10'", "undefined"],
+          "answer": "2"
+      },
+      {
+          "question": "What will 'calculate(3, 7)' return for the function: 'function calculate(a, b) { return (a * b) + (a / b); }'?",
+          "options": ["21.4285", "22", "24", "21"],
+          "answer": "1"
+      },
+      {
+          "question": "What does the expression '2 === '2'' evaluate to in JavaScript?",
+          "options": ["true", "false", "undefined", "SyntaxError"],
+          "answer": "2"
+      },
+      {
+          "question": "What is the output of 'console.log(typeof null)' in JavaScript?",
+          "options": ["'object'", "'null'", "'undefined'", "'number'"],
+          "answer": "1"
+      },
+      {
+          "question": "Which option correctly calls the function defined as 'function sum(x, y) { return x + y; }'?",
+          "options": ["'sum(5, 7)'", "'call(sum, 5, 7)'", "'sum.call(5, 7)'", "'new sum(5, 7)'"],
+          "answer": "1"
+      },
+      {
+          "question": "What is the result of '5 + '3'' in JavaScript?",
+          "options": ["8", "'53'", "'83'", "TypeError"],
+          "answer": "2"
+      },
+      {
+          "question": "What is the output of 'let x = 1; console.log(++x);' in JavaScript?",
+          "options": ["1", "2", "undefined", "SyntaxError"],
+          "answer": "2"
+      },
+      {
+          "question": "What will 'console.log(3 > 2 > 1)' output in JavaScript?",
+          "options": ["true", "false", "undefined", "SyntaxError"],
+          "answer": "2"
+      },
+      {
+          "question": "What is the value of 'x' after 'let x = '5'; x = x++;'?",
+          "options": ["5", "6", "'5'", "'6'"],
+          "answer": "1"
+      },
+      {
+          "question": "What is the output of 'let x = 'Hello'; console.log(x[0]);' in JavaScript?",
+          "options": ["'H'", "'e'", "'Hello'", "undefined"],
+          "answer": "1"
+      },
+      {
+          "question": "What does the code 'let x = [1, 2, 3]; x[10] = 11; console.log(x.length);' output?",
+          "options": ["3", "11", "10", "undefined"],
+          "answer": "3"
+      },
+      {
+          "question": "What will be the output of the following function call: 'console.log(Math.max());'?",
+          "options": ["Infinity", "-Infinity", "NaN", "0"],
+          "answer": "2"
+      },
+      {
+          "question": "What is the result of '4 / 0' in JavaScript?",
+          "options": ["0", "4", "Infinity", "NaN"],
+          "answer": "3"
+      },
+      {
+          "question": "What is the value of 'x' after the code 'let x = !'false';' is executed in JavaScript?",
+          "options": ["true", "false", "'false'", "'true'"],
+          "answer": "1"
+      },
+      {
+          "question": "What does the code 'let x = 1; x <<= 2;' result in for the value of 'x'?",
+          "options": ["1", "2", "4", "8"],
+          "answer": "3"
+      },
+      {
+          "question": "What is the output of the code 'let a = [1, 2, 3]; let b = [1, 2, 3]; console.log(a == b);'?",
+          "options": ["true", "false", "undefined", "TypeError"],
+          "answer": "2"
+      }
+  ]
   
   const topicBriefing = [
     {
